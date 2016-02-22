@@ -1,0 +1,87 @@
+{
+  "_args": [
+    [
+      "svbstrate",
+      "/Users/Eric/Sites/projects/estrattonbailey"
+    ]
+  ],
+  "_from": "svbstrate@latest",
+  "_id": "svbstrate@0.5.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/svbstrate",
+  "_nodeVersion": "0.12.4",
+  "_npmUser": {
+    "email": "ericstrattonbailey@gmail.com",
+    "name": "estrattonbailey"
+  },
+  "_npmVersion": "2.10.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "svbstrate",
+    "raw": "svbstrate",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_shasum": "6936602b019549a507b8557397242e496a8972f4",
+  "_shrinkwrap": null,
+  "_spec": "svbstrate",
+  "_where": "/Users/Eric/Sites/projects/estrattonbailey",
+  "author": {
+    "name": "@estrattonbailey"
+  },
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/svbstrate/issues"
+  },
+  "dependencies": {},
+  "description": "A simple, scalable SCSS base layer.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "6936602b019549a507b8557397242e496a8972f4",
+    "tarball": "http://registry.npmjs.org/svbstrate/-/svbstrate-0.5.3.tgz"
+  },
+  "homepage": "https://github.com/estrattonbailey/svbstrate#readme",
+  "keywords": [
+    "css",
+    "responsive",
+    "scss",
+    "sass",
+    "framework",
+    "boilerplate",
+    "framework",
+    "toolkit",
+    "styles",
+    "reset",
+    "base",
+    "grid",
+    "basic",
+    "framework",
+    "grid",
+    "scss"
+  ],
+  "license": "MIT",
+  "main": "substrate.js",
+  "maintainers": [
+    {
+      "email": "ericstrattonbailey@gmail.com",
+      "name": "estrattonbailey"
+    }
+  ],
+  "name": "svbstrate",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estrattonbailey/svbstrate.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.5.3"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "estrattonbailey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "parallelshell 'assemble' 'npm run js:watch' 'npm run css:watch'",
+    "js:watch": "onchange './src/js/**/*.js' -- npm run js:build",
+    "js:build": "webpack",
+    "css:watch": "onchange './src/scss/**/*.scss' -- npm run css:build",
+    "css:build": "npm run css:scss && npm run css:autoprefixer",
+    "css:scss": "node-sass src/scss/style.scss dist/assets/css/style.css",
+    "css:autoprefixer": "postcss -u autoprefixer -r dist/assets/css/style.css"
+  },
+  "author": "estrattonbailey",
+  "license": "MIT",
+  "devDependencies": {
+    "assemble": "^0.9.1",
+    "assemble-indexer": "^0.1.2",
+    "autoprefixer": "^6.3.3",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "base-watch": "^0.1.2",
+    "get-value": "^2.0.3",
+    "gulp-rename": "^1.2.2",
+    "helper-markdown": "^0.2.1",
+    "node-sass": "^3.4.2",
+    "onchange": "^2.0.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.1",
+    "remarkable": "^1.6.2",
+    "uglify-loader": "^1.3.0",
+    "webpack": "^1.12.13"
+  },
+  "dependencies": {
+    "nab-select": "0.0.6",
+    "svbstrate": "^0.5.3"
+  }
+}
