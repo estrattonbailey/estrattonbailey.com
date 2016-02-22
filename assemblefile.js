@@ -27,10 +27,22 @@ site.create('posts');
 /**
  * Helpers
  */
-site.helpers('./helpers/*.js');
 site.helper('markdown', require('helper-markdown'));
 site.helper('get', function(prop) {
   return get(this.context, prop);
+});
+site.helper('asset', function(file){
+  if (file.indexOf('.js') > -1){
+    return './assets/js/' + file
+  } else if (file.indexOf('.css') > -1){
+    return './assets/css/' + file
+  } else if (file.indexOf('.png') > -1){
+    return './assets/images/' + file
+  } else if (file.indexOf('.jpg') > -1){
+    return './assets/images/' + file
+  } else if (file.indexOf('.svg') > -1){
+    return './assets/images/' + file
+  }
 });
 
 /**
