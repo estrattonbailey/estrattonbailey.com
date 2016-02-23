@@ -191,6 +191,9 @@
   .w45_xxl {
     width: 80%; } }
 
+.h1p {
+  height: 100%; }
+
 .h1 {
   height: 100vh; }
 
@@ -202,6 +205,9 @@
 
 .h14 {
   height: 25vh; }
+
+.h34 {
+  height: 75vh; }
 
 .container, .container--l, .container--m, .container--s {
   margin-left: auto;
@@ -393,7 +399,7 @@ html, html a {
   -moz-box-sizing: border-box; }
 
 .c-theme {
-  color: #148ECC; }
+  color: #ff4567; }
 
 .c-w {
   color: white; }
@@ -414,7 +420,7 @@ html, html a {
   color: #999999; }
 
 .bg-c-theme {
-  background-color: #148ECC; }
+  background-color: #ff4567; }
 
 .bg-c-w {
   background-color: white; }
@@ -1240,6 +1246,9 @@ a {
 .font-d-u {
   text-decoration: underline; }
 
+.f-limit {
+  max-width: 40em; }
+
 .button, .button--border, input[type="submit"],
 button {
   background-color: #148ECC;
@@ -1291,7 +1300,7 @@ label {
   top: calc(50% - 0.5em);
   right: 1em;
   font-size: 2em;
-  color: #148ECC;
+  color: #ff4567;
   pointer-events: none; }
 
 .select-wrapper select {
@@ -1411,8 +1420,14 @@ th,
   .table__cell--styled:last-child {
     padding-right: 0; }
 
-.outer {
+.page__outer {
   padding: 10px; }
   @media (min-width: 50em) {
-    .outer {
+    .page__outer {
       padding: 20px; } }
+
+.page__section {
+  padding: 20px; }
+  @media (min-width: 50em) {
+    .page__section {
+      padding: 40px; } }

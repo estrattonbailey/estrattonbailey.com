@@ -1,6 +1,9 @@
 // Use these classes with caution, as mobile
 // safari doesn't support viewport units. 
 // Provide fallbacks in all use cases.
+.h1p {
+  height: 100%;
+}
 .h1 {
   height: 100vh;
 }
@@ -12,5 +15,8 @@
 }
 .h14 {
   height: 25vh;
+}
+.h34 {
+  height: 75vh;
 }
 

@@ -1,6 +1,14 @@
-.outer {
+.page__outer {
   padding: 10px;
   @media (min-width: break($_m)){
     padding: 20px;
   }
+}
+.page__section {
+  padding: 20px;
+  @media (min-width: break($_m)){
+    padding: 40px;
+  }
+}
+.page__divider {
 }

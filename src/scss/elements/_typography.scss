@@ -152,3 +152,8 @@ a {
 .font-d-u {
 	text-decoration: underline;
 }
+
+// Limit line-length
+.f-limit {
+  max-width: 40em;
+}
