@@ -1,4 +1,6 @@
-// GLOBAL PAGE STYLES
-// .page-section {
-//   @extend .pv-30 !optional;
-// }
+.outer {
+  padding: 10px;
+  @media (min-width: break($_m)){
+    padding: 20px;
+  }
+}

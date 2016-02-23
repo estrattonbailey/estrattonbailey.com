@@ -2,7 +2,8 @@ var site, config,
     assemble = require('assemble'),
     rename = require('gulp-rename'),
     watch = require('base-watch'),
-    get = require('get-value');
+    get = require('get-value'),
+    rimraf = require('rimraf');
 
 /**
  * Define Site
@@ -48,6 +49,11 @@ site.helper('asset', function(file){
 /**
  * Tasks
  */
+function cleanDest(){
+  rimraf('./dist/*.html', function(err){
+    if (err) throw err
+  });
+}
 site.task('load', function(cb){
   site.layouts('./src/markup/layouts/*.hbs');
 
@@ -57,9 +63,11 @@ site.task('load', function(cb){
   site.pages('./src/markup/*.hbs');
   site.posts('./src/posts/**/*.md');
 
+  cleanDest();
+
   cb()
 });
-site.task('pages', function(){
+site.task('pages', 'load', function(){
   return site.toStream('pages', config)
     .pipe(site.renderFile())
     .pipe(rename({
@@ -67,7 +75,7 @@ site.task('pages', function(){
     }))
     .pipe(site.dest('./dist'));
 });
-site.task('posts', function(){
+site.task('posts', 'load', function(){
   return site.toStream('posts', config)
     .pipe(site.renderFile())
     .pipe(rename({
@@ -87,7 +95,7 @@ site.task('watch:posts', function(){
  * Runs watch, which in turn runs the builds
  * for pages and posts.
  */
-site.task('default', 'load', site.parallel(['watch:pages', 'watch:posts']));
+site.task('default', site.parallel(['watch:pages', 'watch:posts']));
 
 /**/
 module.exports = site;

@@ -24,9 +24,13 @@
 
   <title>{{site.title}}</title>
 </head>
-<body {{#if body_classes}}class="{{body_classes}}"{{/if}}>
+<body class="bg-c-g1{{#if body_classes}} {{body_classes}}{{/if}}">
 
-  {% body %}
+  <main class="outer">
+
+    {% body %}
+
+  </main>
 
 </body>
 </html>

@@ -35,7 +35,7 @@
 .w45 {
   width: 80%; }
 
-@media (min-width: 24.9375em) {
+@media (min-width: 25em) {
   .w1_xs {
     width: 100%; }
   .w12_xs {
@@ -61,7 +61,7 @@
   .w45_xs {
     width: 80%; } }
 
-@media (min-width: 31.25em) {
+@media (min-width: 37.5em) {
   .w1_s {
     width: 100%; }
   .w12_s {
@@ -87,7 +87,7 @@
   .w45_s {
     width: 80%; } }
 
-@media (min-width: 48em) {
+@media (min-width: 50em) {
   .w1_m {
     width: 100%; }
   .w12_m {
@@ -113,7 +113,7 @@
   .w45_m {
     width: 80%; } }
 
-@media (min-width: 64em) {
+@media (min-width: 62.5em) {
   .w1_l {
     width: 100%; }
   .w12_l {
@@ -210,47 +210,47 @@
 
 .container--l {
   width: 90%; }
-  @media (min-width: 24.9375em) {
+  @media (min-width: 25em) {
     .container--l {
       width: 92.5%; } }
-  @media (min-width: 48em) {
+  @media (min-width: 50em) {
     .container--l {
       width: 95%; } }
 
 .container--m {
   width: 90%; }
-  @media (min-width: 24.9375em) {
+  @media (min-width: 25em) {
     .container--m {
       width: 85%; } }
-  @media (min-width: 48em) {
+  @media (min-width: 50em) {
     .container--m {
       width: 80%; } }
 
 .container--s {
   width: 90%; }
-  @media (min-width: 24.9375em) {
+  @media (min-width: 25em) {
     .container--s {
       width: 80%; } }
-  @media (min-width: 48em) {
+  @media (min-width: 50em) {
     .container--s {
       width: 66%; } }
 
 .clear-l {
   clear: left; }
 
-@media (min-width: 24.9375em) {
+@media (min-width: 25em) {
   .clear-l_xs {
     clear: left; } }
 
-@media (min-width: 31.25em) {
+@media (min-width: 37.5em) {
   .clear-l_s {
     clear: left; } }
 
-@media (min-width: 48em) {
+@media (min-width: 50em) {
   .clear-l_m {
     clear: left; } }
 
-@media (min-width: 64em) {
+@media (min-width: 62.5em) {
   .clear-l_l {
     clear: left; } }
 
@@ -464,7 +464,7 @@ html, html a {
 .float-n {
   float: none; }
 
-@media (min-width: 24.9375em) {
+@media (min-width: 25em) {
   .float-l_xs {
     float: left; }
   .float-r_xs {
@@ -472,7 +472,7 @@ html, html a {
   .float-n_xs {
     float: none; } }
 
-@media (min-width: 31.25em) {
+@media (min-width: 37.5em) {
   .float-l_s {
     float: left; }
   .float-r_s {
@@ -480,7 +480,7 @@ html, html a {
   .float-n_s {
     float: none; } }
 
-@media (min-width: 48em) {
+@media (min-width: 50em) {
   .float-l_m {
     float: left; }
   .float-r_m {
@@ -488,7 +488,7 @@ html, html a {
   .float-n_m {
     float: none; } }
 
-@media (min-width: 64em) {
+@media (min-width: 62.5em) {
   .float-l_l {
     float: left; }
   .float-r_l {
@@ -1115,7 +1115,7 @@ h1,
 .f1 {
   font-size: 3.2rem;
   line-height: 1.1; }
-  @media screen and (min-width: 31.25em) {
+  @media screen and (min-width: 37.5em) {
     h1,
     .f1 {
       font-size: 4.5rem; } }
@@ -1132,7 +1132,7 @@ blockquote h6,
 blockquote p {
   font-size: 2.5rem;
   line-height: 1.4; }
-  @media screen and (min-width: 31.25em) {
+  @media screen and (min-width: 37.5em) {
     h2,
     .f2,
     blockquote,
@@ -1149,7 +1149,7 @@ h3,
 .f3 {
   font-size: 2rem;
   line-height: 1.4; }
-  @media screen and (min-width: 31.25em) {
+  @media screen and (min-width: 37.5em) {
     h3,
     .f3 {
       font-size: 2.2rem; } }
@@ -1410,3 +1410,9 @@ th,
   th:last-child, .no-padding
   .table__cell--styled:last-child {
     padding-right: 0; }
+
+.outer {
+  padding: 10px; }
+  @media (min-width: 50em) {
+    .outer {
+      padding: 20px; } }
