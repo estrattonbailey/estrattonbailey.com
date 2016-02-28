@@ -97,5 +97,13 @@ site.task('watch:posts', function(){
  */
 site.task('default', site.parallel(['watch:pages', 'watch:posts']));
 
+/**
+ * API to build
+ */
+site.build(['pages', 'posts'], function(err){
+  if (err) throw err;
+  console.log('done!');
+})
+
 /**/
 module.exports = site;
