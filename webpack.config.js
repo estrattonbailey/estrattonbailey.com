@@ -1,8 +1,13 @@
+var path = require('path');
+
 module.exports = {
-  entry: './src/js/index.js',
+  entry: {
+    app: './src/js/index.js',
+    test: './index.js'
+  },
   output: {
-    path: './dist/assets/js/',
-    filename: './main.js'
+    path: path.join(__dirname,'dist/assets/js/'),
+    filename: './[name].js'
   },
   module: {
     loaders: [

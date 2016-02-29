@@ -95,15 +95,16 @@ site.task('watch:posts', function(){
  * Runs watch, which in turn runs the builds
  * for pages and posts.
  */
-site.task('default', site.parallel(['watch:pages', 'watch:posts']));
+//site.task('default', site.parallel(['watch:pages', 'watch:posts']));
+site.task('default', ['pages', 'posts']);
 
 /**
  * API to build
- */
 site.build(['pages', 'posts'], function(err){
   if (err) throw err;
-  console.log('done!');
+  console.log('Assemble error!');
 })
+ */
 
 /**/
 module.exports = site;
