@@ -16,7 +16,7 @@ site = assemble({
  * Pull in site.config.json
  */
 site.data({
-  site: require('./site.config.json')
+  site: require('./src/site.config.json')
 });
 
 /**
