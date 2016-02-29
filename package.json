@@ -23,20 +23,20 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "base-watch": "^0.1.2",
+    "contentful": "^3.0.7",
+    "express": "^4.13.4",
     "get-value": "^2.0.3",
     "gulp-rename": "^1.2.2",
     "helper-markdown": "^0.2.1",
+    "nab-select": "0.0.6",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "remarkable": "^1.6.2",
     "rimraf": "^2.5.2",
+    "svbstrate": "^0.5.3",
     "uglify-loader": "^1.3.0",
-    "webpack": "^1.12.13",
-    "contentful": "^3.0.7",
-    "express": "^4.13.4",
-    "nab-select": "0.0.6",
-    "svbstrate": "^0.5.3"
+    "webpack": "^1.12.13"
   }
 }

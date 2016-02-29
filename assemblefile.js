@@ -68,7 +68,7 @@ site.task('load', function(cb){
   cb()
 });
 site.task('pages', 'load', function(){
-  return site.toStream('pages', config)
+  return site.toStream('pages')
     .pipe(site.renderFile())
     .pipe(rename({
       extname: '.html'
@@ -76,7 +76,7 @@ site.task('pages', 'load', function(){
     .pipe(site.dest('./dist'));
 });
 site.task('posts', 'load', function(){
-  return site.toStream('posts', config)
+  return site.toStream('posts')
     .pipe(site.renderFile())
     .pipe(rename({
       extname: '.html'
@@ -95,16 +95,19 @@ site.task('watch:posts', function(){
  * Runs watch, which in turn runs the builds
  * for pages and posts.
  */
-//site.task('default', site.parallel(['watch:pages', 'watch:posts']));
-site.task('default', ['pages', 'posts']);
+site.task('watch', site.parallel(['watch:pages', 'watch:posts']));
+site.task('default', ['load', 'pages', 'posts']);
 
 /**
  * API to build
-site.build(['pages', 'posts'], function(err){
-  if (err) throw err;
-  console.log('Assemble error!');
-})
  */
+site.assemblify = function(data){
+  console.log(data)
+  site.build(['pages', 'posts'], function(err){
+    if (err) throw err;
+    console.log('Done!');
+  })
+}
 
 /**/
 module.exports = site;
