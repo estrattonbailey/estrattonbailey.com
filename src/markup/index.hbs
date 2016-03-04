@@ -5,7 +5,7 @@
   </header>
   <div class="table w1 h1p">
     <div class="table__cell w1 align-m">
-      <h2 class="c-theme font-w-4 f-limit">Eric Bailey is a front-end developer and designer living and working in New York City. He’s from Iowa and will tell you so if you meet him.</h2>
+      <h2 class="c-theme font-w-4 f-limit">{{headline}}</h2>
     </div>
   </div>
   <div class="hero-social absolute c-g3 f4">
@@ -16,24 +16,10 @@
 </section>
 
 <section class="page__section bg-c-g2 u-clear">
-  <a href="#0" class="project block float-l w12_m w13_xl pl-16 pv-5 mv-24">
-    <h3 class="font-w-5 inline-relative mb-6 anchor-underline">Startup Stock Photos</h3>
-    <p>A simple, scalable CSS base-layer.</p>
-  </a>
-  <a href="#0" class="project block float-l w12_m w13_xl pl-16 pv-5 mv-24">
-    <h3 class="font-w-5 inline-relative mb-6 anchor-underline">Startup Stock Photos</h3>
-    <p>A simple, scalable CSS base-layer.</p>
-  </a>
-  <a href="#0" class="project block float-l w12_m w13_xl pl-16 pv-5 mv-24">
-    <h3 class="font-w-5 inline-relative mb-6 anchor-underline">Startup Stock Photos</h3>
-    <p>A simple, scalable CSS base-layer.</p>
-  </a>
-  <a href="#0" class="project block float-l w12_m w13_xl pl-16 pv-5 mv-24">
-    <h3 class="font-w-5 inline-relative mb-6 anchor-underline">Startup Stock Photos</h3>
-    <p>A simple, scalable CSS base-layer.</p>
-  </a>
-  <a href="#0" class="project block float-l w12_m w13_xl pl-16 pv-5 mv-24">
-    <h3 class="font-w-5 inline-relative mb-6 anchor-underline">Startup Stock Photos</h3>
-    <p>A simple, scalable CSS base-layer.</p>
-  </a>
+  {{#each work}}
+    <a href="{{link}}" class="project block float-l w12_m w13_xl pl-16 pv-5 mv-24">
+      <h3 class="font-w-5 inline-relative mb-6 anchor-underline">{{title}}</h3>
+      <p>{{caption}}</p>
+    </a>
+  {{/each}}
 </section>

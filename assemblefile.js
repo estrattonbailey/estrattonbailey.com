@@ -45,6 +45,19 @@ site.helper('asset', function(file){
     return './assets/images/' + file
   }
 });
+site.helper('limit', function(context, block){
+  var ret = "",
+      offset = parseInt(block.hash.offset) || 0,
+      limit = parseInt(block.hash.limit) || 5,
+      i = (offset < context.length) ? offset : 0,
+      j = ((limit + offset) < context.length) ? (limit + offset) : context.length;
+
+  for(i,j; i<j; i++) {
+    ret += block(context[i]);
+  }
+
+  return ret;
+});
 
 /**
  * Tasks
@@ -67,7 +80,7 @@ site.task('load', function(cb){
 
   cb()
 });
-site.task('pages', 'load', function(){
+site.task('pages', function(){
   return site.toStream('pages')
     .pipe(site.renderFile())
     .pipe(rename({
@@ -75,7 +88,7 @@ site.task('pages', 'load', function(){
     }))
     .pipe(site.dest('./dist'));
 });
-site.task('posts', 'load', function(){
+site.task('posts', function(){
   return site.toStream('posts')
     .pipe(site.renderFile())
     .pipe(rename({
@@ -102,11 +115,14 @@ site.task('default', ['load', 'pages', 'posts']);
  * API to build
  */
 site.assemblify = function(data){
-  console.log(data)
-  site.build(['pages', 'posts'], function(err){
-    if (err) throw err;
+  site.data(data)
+  site.build('default', function(err){
+    if (err) {
+      console.log(err)
+      throw err;
+    }
     console.log('Done!');
-  })
+  });
 }
 
 /**/
