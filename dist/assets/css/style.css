@@ -234,10 +234,14 @@ select {
 .h34 {
   height: 75vh; }
 
+.h45 {
+  height: 80vh; }
+
 .container, .container--l, .container--m, .container--s {
   margin-left: auto;
   margin-right: auto;
-  width: 100%; }
+  width: 100%;
+  max-width: 1300px; }
 
 .container--l {
   width: 90%; }
@@ -258,7 +262,8 @@ select {
       width: 80%; } }
 
 .container--s {
-  width: 90%; }
+  width: 90%;
+  max-width: 700px; }
   @media (min-width: 25em) {
     .container--s {
       width: 80%; } }
@@ -1286,7 +1291,6 @@ html, body {
   font-family: Consolas , Monaco, monospace; }
 
 h1, h2, h3, h4, h5, h6, p {
-  font-weight: 100;
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1299,7 +1303,7 @@ h1,
   @media screen and (min-width: 37.5em) {
     h1,
     .f1 {
-      font-size: 3rem; } }
+      font-size: 3.4rem; } }
 
 h2,
 .f2,
@@ -1310,8 +1314,9 @@ blockquote h3,
 blockquote h4,
 blockquote h5,
 blockquote h6,
-blockquote p {
-  font-size: 2.4rem;
+blockquote p,
+.post__title {
+  font-size: 2.6rem;
   line-height: 1.4; }
   @media screen and (min-width: 37.5em) {
     h2,
@@ -1323,17 +1328,18 @@ blockquote p {
     blockquote h4,
     blockquote h5,
     blockquote h6,
-    blockquote p {
-      font-size: 2.4rem; } }
+    blockquote p,
+    .post__title {
+      font-size: 2.6rem; } }
 
 h3,
 .f3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 1.4; }
   @media screen and (min-width: 37.5em) {
     h3,
     .f3 {
-      font-size: 1.8rem; } }
+      font-size: 2.2rem; } }
 
 h4,
 .f4 {
@@ -1354,7 +1360,6 @@ p,
 .p,
 code {
   font-size: 1.6rem;
-  font-weight: 100;
   line-height: 1.7; }
 
 blockquote {
@@ -1374,17 +1379,20 @@ hr {
 a {
   text-decoration: none; }
 
-.anchor-underline::after {
+.underline::after, .underline--thick::after {
   content: '';
   display: block;
   position: absolute;
   width: 100%;
-  top: calc(100% - 0.3ex);
-  height: 0.15ex;
+  top: calc(100% - 0.1ex);
+  height: 0.2ex;
   background: currentColor; }
 
+.underline--thick::after {
+  height: .4ex; }
+
 .text-content h1, .text-content h2, .text-content h3, .text-content h4, .text-content h5, .text-content h6,
-.text-content .f1, .text-content .f2, .text-content blockquote, .text-content blockquote h1, blockquote .text-content h1, .text-content blockquote h2, blockquote .text-content h2, .text-content blockquote h3, blockquote .text-content h3, .text-content blockquote h4, blockquote .text-content h4, .text-content blockquote h5, blockquote .text-content h5, .text-content blockquote h6, blockquote .text-content h6, .text-content blockquote p, blockquote .text-content p, .text-content .f3, .text-content .f4, .text-content .f5, .text-content .f6 {
+.text-content .f1, .text-content .f2, .text-content blockquote, .text-content blockquote h1, blockquote .text-content h1, .text-content blockquote h2, blockquote .text-content h2, .text-content blockquote h3, blockquote .text-content h3, .text-content blockquote h4, blockquote .text-content h4, .text-content blockquote h5, blockquote .text-content h5, .text-content blockquote h6, blockquote .text-content h6, .text-content blockquote p, blockquote .text-content p, .text-content .post__title, .text-content .f3, .text-content .f4, .text-content .f5, .text-content .f6 {
   margin: 1ex 0 .6ex; }
 
 .text-content p {
@@ -1430,8 +1438,11 @@ a {
 .font-d-u {
   text-decoration: underline; }
 
-.f-limit {
+.f-limit-40 {
   max-width: 40em; }
+
+.f-limit-60 {
+  max-width: 60em; }
 
 .button, .button--border, input[type="submit"],
 button {
@@ -1604,24 +1615,40 @@ th,
   .table__cell--styled:last-child {
     padding-right: 0; }
 
-.project {
-  border-left: 1px solid white; }
-  .project:hover h3::after {
-    opacity: 0; }
+.project:hover h3::after {
+  opacity: 0; }
 
 .hero-social {
-  bottom: 10px; }
+  bottom: 15px; }
   .hero-social a:hover {
     color: black; }
 
-.page__outer {
-  padding: 10px; }
-  @media (min-width: 50em) {
-    .page__outer {
-      padding: 20px; } }
+.posts__footer {
+  margin-top: 40px; }
+  @media (min-width: 62.5em) {
+    .posts__footer {
+      margin-top: 80px; } }
+
+.post:hover .post__title::after {
+  opacity: 1; }
+
+.post + .post {
+  margin-top: 40px; }
+  @media (min-width: 62.5em) {
+    .post + .post {
+      margin-top: 70px; } }
+
+.post__title::after {
+  opacity: 0; }
+
+.breadcrumbs a:hover::after {
+  opacity: 0; }
 
 .page__section {
-  padding: 20px; }
+  padding: 30px 20px; }
   @media (min-width: 50em) {
     .page__section {
-      padding: 40px; } }
+      padding: 85px 60px; } }
+
+.page__divider {
+  height: 3px; }

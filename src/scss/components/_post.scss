@@ -1,0 +1,30 @@
+.posts__footer {
+  margin-top: 40px;
+  @media (min-width: break($_l)){
+    margin-top: 80px;
+  }
+}
+.post {
+  &:hover {
+    .post__title {
+      &::after {
+        opacity: 1
+      }
+    }
+  }
+  & + .post {
+    margin-top: 40px; 
+    @media (min-width: break($_l)){
+      margin-top: 70px; 
+    }
+  }
+}
+.post__title {
+  @extend .f2;
+  &::after {
+    opacity: 0;
+  }
+}
+.post__header {
+  
+}

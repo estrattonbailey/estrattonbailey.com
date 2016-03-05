@@ -22,7 +22,6 @@ html, body {
 	font-family: Consolas , Monaco, monospace;
 }
 h1, h2, h3, h4, h5, h6, p {
-	font-weight: 100;
 	margin: 0;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -33,23 +32,23 @@ h1,
 	font-size: 3rem;
 	line-height: 1.1;
 	@media screen and (min-width: break($_s)) {
-		font-size: 3rem;
+		font-size: 3.4rem;
 	}
 }
 h2,
 .f2 {
-	font-size: 2.4rem;
+	font-size: 2.6rem;
 	line-height: 1.4;
 	@media screen and (min-width: break($_s)) {
-		font-size: 2.4rem;
+		font-size: 2.6rem;
 	}
 }
 h3,
 .f3 {
-	font-size: 1.8rem;
+	font-size: 2rem;
 	line-height: 1.4;
 	@media screen and (min-width: break($_s)) {
-		font-size: 1.8rem;
+		font-size: 2.2rem;
 	}
 }
 h4,
@@ -70,7 +69,6 @@ h6,
 p,
 .p {
 	font-size: 1.6rem;
-	font-weight: 100;
 	line-height: 1.7;
 }
 blockquote {
@@ -97,15 +95,22 @@ hr {
 a {
 	text-decoration: none;
 }
-.anchor-underline {
+.underline {
   &::after {
     content: '';
     display: block;
     position: absolute;
     width: 100%;
-    top: calc(100% - 0.3ex);
-    height: 0.15ex;
+    top: calc(100% - 0.1ex);
+    height: 0.2ex;
     background: currentColor;
+  }
+
+  &--thick {
+    @extend .underline;
+    &::after {
+      height: .4ex;
+    }
   }
 }
 
@@ -165,6 +170,9 @@ a {
 }
 
 // Limit line-length
-.f-limit {
+.f-limit-40 {
   max-width: 40em;
+}
+.f-limit-60 {
+  max-width: 60em;
 }

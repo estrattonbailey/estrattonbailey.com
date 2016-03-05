@@ -20,17 +20,13 @@
   <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{site.og_img}}" />
   <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{site.url}}" />
 
-  <link rel="stylesheet" type="text/css" href="{{asset 'style.css'}}"/>
+  <link rel="stylesheet" type="text/css" href="{{site.url}}{{asset 'style.css'}}"/>
 
   <title>{{site.title}}</title>
 </head>
-<body class="bg-c-g1{{#if body_classes}} {{body_classes}}{{/if}}">
+<body class="{{#if body_classes}} {{body_classes}}{{/if}}">
 
-  <main class="page__outer">
-
-    {% body %}
-
-  </main>
+  {% body %}
 
 </body>
 </html>

@@ -5,6 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "parallelshell 'assemble' 'npm run js:watch' 'npm run css:watch'",
+    "assets:watch": "parallelshell 'npm run js:watch' 'npm run css:watch'",
+    "assets:build": "parallelshell 'npm run js:build' 'npm run css:build'",
     "js:watch": "onchange './src/js/**/*.js' -- npm run js:build",
     "js:build": "webpack",
     "css:watch": "onchange './src/scss/**/*.scss' -- npm run css:build",

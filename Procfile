@@ -1,1 +1,1 @@
-web: node index.js
+start: npm run assets:build ; node index.js

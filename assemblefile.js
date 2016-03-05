@@ -4,6 +4,7 @@ var site, config,
     watch = require('base-watch'),
     get = require('get-value'),
     rimraf = require('rimraf');
+    // helpers = require('./lib/helpers.js');
 
 /**
  * Define Site
@@ -13,11 +14,9 @@ site = assemble({
 });
 
 /**
- * Pull in site.config.json
+ * Pull in cached data
  */
-site.data({
-  site: require('./src/site.config.json')
-});
+site.data(require('./data/cache.json') || {});
 
 /**
  * Init
@@ -28,35 +27,34 @@ site.create('posts');
 /**
  * Helpers
  */
+// Object.keys(helpers).forEach(function(name, i){
+//   site.helper(name, helpers[name]);
+// });
 site.helper('markdown', require('helper-markdown'));
 site.helper('get', function(prop) {
   return get(this.context, prop);
 });
 site.helper('asset', function(file){
   if (file.indexOf('.js') > -1){
-    return './assets/js/' + file
+    return '/assets/js/' + file
   } else if (file.indexOf('.css') > -1){
-    return './assets/css/' + file
+    return '/assets/css/' + file
   } else if (file.indexOf('.png') > -1){
-    return './assets/images/' + file
+    return '/assets/images/' + file
   } else if (file.indexOf('.jpg') > -1){
-    return './assets/images/' + file
+    return '/assets/images/' + file
   } else if (file.indexOf('.svg') > -1){
-    return './assets/images/' + file
+    return '/assets/images/' + file
   }
 });
-site.helper('limit', function(context, block){
-  var ret = "",
-      offset = parseInt(block.hash.offset) || 0,
-      limit = parseInt(block.hash.limit) || 5,
-      i = (offset < context.length) ? offset : 0,
-      j = ((limit + offset) < context.length) ? (limit + offset) : context.length;
+site.helper('limit', function(array, limit, options){
+  var result = '';
 
-  for(i,j; i<j; i++) {
-    ret += block(context[i]);
+  for (var i = 0; i < limit; i++){
+    result += options.fn(array[i]) 
   }
 
-  return ret;
+  return result;
 });
 
 /**
@@ -73,8 +71,8 @@ site.task('load', function(cb){
   site.partials('./src/markup/modules/*.hbs');
   site.partials('./src/markup/components/*.hbs');
 
-  site.pages('./src/markup/*.hbs');
-  site.posts('./src/posts/**/*.md');
+  site.pages('./src/markup/pages/*.hbs');
+  site.posts('./src/posts/*.md');
 
   cleanDest();
 
@@ -82,18 +80,24 @@ site.task('load', function(cb){
 });
 site.task('pages', function(){
   return site.toStream('pages')
+    .on('error', console.log)
     .pipe(site.renderFile())
+    .on('error', console.log)
     .pipe(rename({
       extname: '.html'
     }))
+    .on('error', console.log)
     .pipe(site.dest('./dist'));
 });
 site.task('posts', function(){
   return site.toStream('posts')
+    .on('error', console.log)
     .pipe(site.renderFile())
+    .on('error', console.log)
     .pipe(rename({
       extname: '.html'
     }))
+    .on('error', console.log)
     .pipe(site.dest('./dist'));
 });
 site.task('watch:pages', function(){
@@ -116,12 +120,13 @@ site.task('default', ['load', 'pages', 'posts']);
  */
 site.assemblify = function(data){
   site.data(data)
+
   site.build('default', function(err){
     if (err) {
-      console.log(err)
+      console.log('Build error: '+err);
       throw err;
     }
-    console.log('Done!');
+    console.log('Assemble complete.');
   });
 }
 
