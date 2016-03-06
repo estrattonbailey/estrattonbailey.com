@@ -3,7 +3,7 @@ var site,
     rename = require('gulp-rename'),
     watch = require('base-watch'),
     rimraf = require('rimraf'),
-    helpers = require('../lib/helpers.js');
+    helpers = require('./lib/helpers.js');
 
 /**
  * Define Site
@@ -15,7 +15,7 @@ site = assemble({
 /**
  * Pull in cached data
  */
-site.data(require('../data/cache.json') || {});
+site.data(require('./data/cache.json') || {});
 
 /**
  * Init
@@ -34,17 +34,17 @@ Object.keys(helpers).forEach(function(name, i){
  * Tasks
  */
 function cleanDest(){
-  rimraf('../dist/*.html', function(err){
+  rimraf('./dist/*.html', function(err){
     if (err) throw err
   });
 }
 site.task('load', function(cb){
-  site.layouts('../src/markup/layouts/*.hbs');
+  site.layouts('./src/markup/layouts/*.hbs');
 
-  site.partials(['../src/markup/modules/*.hbs', '../src/markup/components/*.hbs']);
+  site.partials(['./src/markup/modules/*.hbs', './src/markup/components/*.hbs']);
 
-  site.pages('../src/markup/pages/*.hbs');
-  site.posts('../src/posts/*.md');
+  site.pages('./src/markup/pages/*.hbs');
+  site.posts('./src/posts/*.md');
 
   cleanDest();
 
@@ -56,7 +56,7 @@ site.task('pages', function(){
     .pipe(rename({
       extname: '.html'
     }))
-    .pipe(site.dest('../dist'));
+    .pipe(site.dest('./dist'));
 });
 site.task('posts', function(){
   return site.toStream('posts')
@@ -64,13 +64,13 @@ site.task('posts', function(){
     .pipe(rename({
       extname: '.html'
     }))
-    .pipe(site.dest('../dist'));
+    .pipe(site.dest('./dist'));
 });
 site.task('watch:pages', function(){
-  site.watch(['../src/markup/**/*.hbs'], ['pages']);
+  site.watch(['./src/markup/**/*.hbs'], ['pages']);
 });
 site.task('watch:posts', function(){
-  site.watch(['../src/posts/**/*.md'], ['posts']);
+  site.watch(['./src/posts/**/*.md'], ['posts']);
 });
 
 /**
@@ -78,8 +78,8 @@ site.task('watch:posts', function(){
  * Runs watch, which in turn runs the builds
  * for pages and posts.
  */
-site.task('watch', site.parallel(['watch:pages', 'watch:posts']));
-site.task('default', ['load', 'pages', 'posts']);
+site.task('default', ['build', site.parallel(['watch:pages', 'watch:posts'])]);
+site.task('build', ['load', 'pages', 'posts']);
 
 /**
  * API to build
@@ -87,7 +87,7 @@ site.task('default', ['load', 'pages', 'posts']);
 site.assemblify = function(data){
   site.data(data)
 
-  site.build('default', function(err){
+  site.build('build', function(err){
     if (err) {
       console.log('Build error: '+err);
       throw err;

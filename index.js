@@ -2,7 +2,7 @@ var app,
     path = require('path'),
     express = require('express'),
     contentful = require('./lib/contentful.js'),
-    assemble = require('./lib/assemblefile.js');
+    assemble = require('./assemblefile.js');
 
 contentful(function(data){
   console.log('Passing to assemble');
