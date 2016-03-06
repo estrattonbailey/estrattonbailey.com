@@ -1,9 +1,13 @@
 var app,
     path = require('path'),
     express = require('express'),
-    build = require('./lib/build.js');
+    contentful = require('./lib/contentful.js'),
+    assemble = require('./lib/assemblefile.js');
 
-build();
+contentful(function(data){
+  console.log('Passing to assemble');
+  assemble.assemblify(data);
+});
 
 app = express();
 

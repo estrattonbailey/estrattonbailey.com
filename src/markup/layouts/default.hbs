@@ -5,24 +5,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="canonical" href="">
 
-  <meta name="author" content="{{site.author}}">
+  <meta name="author" content="{{site.meta.author}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="keywords" content="{{site.description}}"/>
-  <meta name="description" content="{{site.description}}"/>
+  <meta name="keywords" content="{{site.meta.description}}"/>
+  <meta name="description" content="{{site.meta.description}}"/>
 
 	<!-- Icons -->
 	<link rel="icon" type="image/png" href="assets/icons/favicon.png">
 
 	<!-- Open Graph data -->
-	<meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{site.description}}"/>
-  <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="{{site.description}}"/>
-  <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{site.title}}" />
-  <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{site.og_img}}" />
-  <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{site.url}}" />
+	<meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{site.meta.description}}"/>
+  <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="{{site.meta.description}}"/>
+  <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{site.meta.title}}" />
+  <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{site.meta.og_img}}" />
+  <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{site.meta.url}}" />
 
-  <link rel="stylesheet" type="text/css" href="{{site.url}}{{asset 'style.css'}}"/>
+  <link rel="stylesheet" type="text/css" href="{{site.meta.url}}{{asset 'style.css'}}"/>
 
-  <title>{{site.title}}</title>
+  <title>{{site.meta.title}}</title>
 </head>
 <body class="{{#if body_classes}} {{body_classes}}{{/if}}">
 
