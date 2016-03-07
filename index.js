@@ -5,7 +5,6 @@ var app,
     assemble = require('./assemblefile.js');
 
 contentful(function(data){
-  console.log('Passing to assemble');
   assemble.assemblify(data);
 });
 
