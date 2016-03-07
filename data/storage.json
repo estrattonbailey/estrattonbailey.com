@@ -1,0 +1,35 @@
+{
+  "site": {
+    "meta": {
+      "version": "0.0.1",
+      "title": "Eric Bailey",
+      "url": "http://localhost:5000",
+      "author": "@estrattonbailey",
+      "description": "Designer, developer.",
+      "keywords": "designer, developer",
+      "og_img": "/"
+    }
+  },
+  "projects": [
+    {
+      "title": "Startup Stock Photos",
+      "caption": "Free tech stock photos.",
+      "url": "http://startupstockphotos.com",
+      "createdAt": "2016-03-04T03:09:04.074Z"
+    },
+    {
+      "title": "Svbstrate",
+      "caption": "Simple, scalable CSS base layer.",
+      "url": "http://github.com/estrattonbailey/svbstrate",
+      "createdAt": "2016-03-04T03:09:39.642Z"
+    }
+  ],
+  "posts": [
+    {
+      "title": "Show Your Work",
+      "body": "Lately I feel like I’ve been finding a lot of process articles floating around the internet and Twitter. These are articles that document the authors thought process, often times asking questions that they don’t know the answer to. This is awesome! For a couple main reasons: \n\nOne, for young devs like me, it’s reassuring knowing that even accomplished devs struggle with concepts and learning what works for them.\n\nTwo, it means that instead of calling others out and staking opinions on the best framework (which seems to happen a lot lately), these authors are letting people in a something we all share: we’re learning as we go.\n\nI’m thinking now about that quote attributed to Jeff Bezos:\n> People who are right a lot of the time are people who often change their minds.\n\nWhich brings me to my point.\n\n### The Point\n\nI just read [_Why Curry Helps_](https://hughfdjackson.com/javascript/why-curry-helps/) by Hugh Jackson. In the article he explains how currying, a feature of purely functional languages like Haskell, can be used in Javascript to great effect. The benefits as outlined by his examples are pretty clear: simple, reusable code.\n\nIn the comments, a guy named Josh Habdas made a good point though:\n> Taking ES6 arrow functions into consideration the boilerplate shown to access the data in the examples would be simplified markedly.\n\nJackson then responded with a link to [another of his articles](https://hughfdjackson.com/javascript/does-curry-help/), which addressed Habdas’s point and was aptly titled, _Does Curry Help?_ So, I read that article too.\n\nThe second article essentially said this: I was wrong two years ago about currying, and here are the takeaways I have from this learning process.\n\nI think some of the best of those takeaways are as follows:\n\n1.  “Simple”, he proposes, means that concerns aren’t tangled up together. “Easy”, that something close to your current understanding.\n\n2.  Perfectly simple code - code that doesn’t needlessly intertwine any concerns - gains your team little if it’s outstandingly difficult to work with.\n\n3.  While I still believe that the benefits I focussed on in [Why Curry Helps](https://hughfdjackson.com/javascript/why-curry-helps) exist, the article doesn’t pay enough attention to the issues with using the technique in practice.\n\n4.  I’ve seen the value of meeting people much closer to where they are.\n\nThese are powerful points that I’m going to try to keep in mind as I work with and grow teams.\n\nBut I think the greater lesson – and hopefully a trend – is that letting people into your process helps to bring everyone to the same level. Lack of experience shouldn't be a barrier to sharing honest thoughts. You don't have to know everything to contibute ideas, pose questions, and engage in constructive conversation.",
+      "excerpt": "For young devs like me, it’s reassuring knowing that even accomplished devs struggle with concepts and learning what works for them.",
+      "createdAt": "2016-03-05T20:53:36.153Z"
+    }
+  ]
+}

@@ -1,11 +1,13 @@
 var app,
     path = require('path'),
     express = require('express'),
-    contentful = require('./lib/contentful.js'),
-    assemble = require('./assemblefile.js');
+    contentful = require(__dirname+'/lib/contentful.js'),
+    assemble = require(__dirname+'/assemblefile.js'),
+    storage = require(__dirname+'/lib/storage.js');
 
 contentful(function(data){
   assemble.assemblify(data);
+  storage(data);
 });
 
 app = express();
