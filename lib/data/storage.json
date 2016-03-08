@@ -12,16 +12,16 @@
   },
   "projects": [
     {
-      "title": "Startup Stock Photos",
-      "caption": "Free tech stock photos.",
-      "url": "http://startupstockphotos.com",
-      "createdAt": "2016-03-04T03:09:04.074Z"
-    },
-    {
       "title": "Svbstrate",
       "caption": "Simple, scalable CSS base layer.",
       "url": "http://github.com/estrattonbailey/svbstrate",
       "createdAt": "2016-03-04T03:09:39.642Z"
+    },
+    {
+      "title": "Startup Stock Photos",
+      "caption": "Free tech stock photos.",
+      "url": "http://startupstockphotos.com",
+      "createdAt": "2016-03-04T03:09:04.074Z"
     }
   ],
   "posts": [

@@ -15,7 +15,7 @@ site = assemble({
 /**
  * Pull in cached data
  */
-site.data(require('./data/cache.json') || {});
+site.data(require('./lib/data/storage.json') || {});
 
 /**
  * Init
