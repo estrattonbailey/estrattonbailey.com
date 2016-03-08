@@ -3,11 +3,11 @@ var app,
     express = require('express'),
     contentful = require(__dirname+'/lib/contentful.js'),
     assemble = require(__dirname+'/assemblefile.js'),
-    storage = require(__dirname+'/lib/storage.js');
+    store = require(__dirname+'/lib/tasks/storage.js');
 
 contentful(function(data){
   assemble.assemblify(data);
-  storage(data);
+  store(data);
 });
 
 app = express();
