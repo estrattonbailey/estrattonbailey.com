@@ -3,7 +3,7 @@ var site,
     rename = require('gulp-rename'),
     watch = require('base-watch'),
     rimraf = require('rimraf'),
-    helpers = require('./lib/helpers.js');
+    helpers = require(__dirname+'/lib/helpers.js');
 
 /**
  * Define Site
@@ -15,7 +15,7 @@ site = assemble({
 /**
  * Pull in cached data
  */
-site.data(require('./lib/data/storage.json') || {});
+site.data(require(__dirname+'/lib/data/storage.json') || {});
 
 /**
  * Init
@@ -39,12 +39,12 @@ function cleanDest(){
   });
 }
 site.task('load', function(cb){
-  site.layouts('./src/markup/layouts/*.hbs');
+  site.layouts(__dirname+'/src/markup/layouts/*.hbs');
 
-  site.partials(['./src/markup/modules/*.hbs', './src/markup/components/*.hbs']);
+  site.partials([__dirname+'/src/markup/modules/*.hbs', __dirname+'/src/markup/components/*.hbs']);
 
-  site.pages('./src/markup/pages/*.hbs');
-  site.posts('./src/posts/*.md');
+  site.pages(__dirname+'/src/markup/pages/*.hbs');
+  site.posts(__dirname+'/src/posts/*.md');
 
   cleanDest();
 
@@ -56,7 +56,7 @@ site.task('pages', function(){
     .pipe(rename({
       extname: '.html'
     }))
-    .pipe(site.dest('./dist'));
+    .pipe(site.dest(__dirname+'/dist'));
 });
 site.task('posts', function(){
   return site.toStream('posts')
@@ -64,13 +64,13 @@ site.task('posts', function(){
     .pipe(rename({
       extname: '.html'
     }))
-    .pipe(site.dest('./dist'));
+    .pipe(site.dest(__dirname+'/dist'));
 });
 site.task('watch:pages', function(){
-  site.watch(['./src/markup/**/*.hbs'], ['pages']);
+  site.watch([__dirname+'/src/markup/**/*.hbs'], ['pages']);
 });
 site.task('watch:posts', function(){
-  site.watch(['./src/posts/**/*.md'], ['posts']);
+  site.watch([__dirname+'/src/posts/**/*.md'], ['posts']);
 });
 
 /**
