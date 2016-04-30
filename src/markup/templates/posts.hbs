@@ -12,13 +12,10 @@ layout: default.hbs
 </section>
 
 <section class="page__section">
-  {{> post}}
-  {{> post}}
-  {{> post}}
-  {{> post}}
-  {{> post}}
-  {{> post}}
-  {{> post}}
+  {{#each posts}}
+    {{this.title}}
+    {{this.body}}
+  {{/each}}
 </section>
 
 <footer class="block-relative h14 bg-c-theme"></footer>
