@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run assets:build ; npm run site:build ; parallelshell 'npm run js:watch' 'npm run css:watch' 'npm run site:watch'",
-    "site:watch": "onchange './lib/**/*.js' './site.config.js' -- npm run site:build",
+    "site:watch": "onchange './lib/**/*.js' './site.config.js' './src/markup/**/*.hbs' -- npm run site:build",
     "site:build": "node lib/build.js",
     "assets:watch": "parallelshell 'npm run js:watch' 'npm run css:watch'",
     "assets:build": "npm run js:build ; npm run css:build",
