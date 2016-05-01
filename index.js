@@ -1,6 +1,7 @@
 var app,
     path = require('path'),
-    express = require('express');
+    express = require('express'),
+    build = require('./lib/build.js');
 
 /**
  * Init Express server
@@ -20,7 +21,6 @@ app.listen(app.get('port'), function() {
 });
 
 app.post('/contentful', function(req, res, next) {
-  console.log('Webhook: ', req);
   res.send(200);
-  res.render('index', { title: 'WebHook Info' });
+  build(true, req.body)
 });
