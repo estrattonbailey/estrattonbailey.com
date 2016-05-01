@@ -21,6 +21,6 @@ app.listen(app.get('port'), function() {
 });
 
 app.post('/contentful', function(req, res, next) {
-  res.send(200);
-  console.log(req)
+  res.sendStatus(200);
+  console.log(req.headers['x-contentful-topic'].split('.')[2])
 });
