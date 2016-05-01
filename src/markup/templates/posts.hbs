@@ -6,15 +6,14 @@ layout: default.hbs
     <h4 class="c-g2">
       <a href="/" class="c-b font-w-5 underline inline-relative">Home</a>
       <span class="c-g3 font-w-9 mh-6">/</span>
-      <span href="/" class="font-w-5">Writing</span>
+      <span href="./writing" class="font-w-5">Writing</span>
     </h4>
   </div>
 </section>
 
 <section class="page__section">
   {{#each posts}}
-    {{this.title}}
-    {{this.body}}
+    {{> post}}
   {{/each}}
 </section>
 

@@ -5,7 +5,7 @@ var config = {
     url: 'http://localhost:5000/',
     author: '@estrattonbailey',
     description: 'Designer, developer.',
-    keywords: 'designer, developer',
+    keywords: 'developer',
     og_img: '/'
   }
 }
