@@ -22,5 +22,5 @@ app.listen(app.get('port'), function() {
 
 app.post('/contentful', function(req, res, next) {
   res.send(200);
-  build(true, req.body)
+  console.log(req)
 });
