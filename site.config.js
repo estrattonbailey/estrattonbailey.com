@@ -1,8 +1,10 @@
-require('dotenv').config();
+try {
+  require('dotenv').config();
+} catch(e){}
 
 var domain = process.env.PRODUCTION === 'true' 
-      ? 'https://estrattonbailey.herokuapp.com' 
-      : 'http://localhost:5000';
+      ? 'http://localhost:5000'
+      : 'https://estrattonbailey.herokuapp.com';
 
 var config = {
   meta: {
