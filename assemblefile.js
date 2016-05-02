@@ -1,4 +1,5 @@
 var site,
+    config = require('./site.config.js'),
     assemble = require('assemble'),
     rename = require('gulp-rename'),
     watch = require('base-watch'),
@@ -15,13 +16,7 @@ site = assemble({
 /**
  * Init
  */
-// site.use(watch());
-site.create('posts', {isPartial: true});
 site.create('pages', {isPartial: true});
-
-site.on('error', function(err) {
-  console.error(err);
-});
 
 /**
  * Helpers
@@ -29,21 +24,37 @@ site.on('error', function(err) {
 Object.keys(helpers).forEach(function(name, i){
   site.helper(name, helpers[name]);
 });
+site.on('error', function(err) {
+  console.error(err);
+});
 
 /**
  * Tasks
  */
-function cleanDest(){
-  rimraf('./dist/*.html', function(err){
-    if (err) throw err
-  });
-}
 site.task('load', function(cb){
-  site.layouts(__dirname+'/src/markup/layouts/*.hbs');
+  var partialsGlob = [],
+      layoutsGlob = [],
+      partials = config.assemble.partials,
+      layouts = config.assemble.layouts;
 
-  site.partials([__dirname+'/src/markup/modules/*.hbs', __dirname+'/src/markup/components/*.hbs']);
+  if (Array.isArray(layouts.patterns)){
+    for (var i = 0; i < layouts.patterns.length; i++){
+      layoutsGlob.push(layouts.base+layouts.patterns[i])
+    }
+  } else {
+    layoutsGlob = layouts.base+layouts.patterns
+  }
 
-  cleanDest();
+  if (Array.isArray(partials.patterns)){
+    for (var i = 0; i < partials.patterns.length; i++){
+      partialsGlob.push(partials.base+partials.patterns[i])
+    }
+  } else {
+    partialsGlob = partials.base+partials.patterns
+  }
+
+  site.layouts(layoutsGlob);
+  site.partials(partialsGlob);
 
   cb()
 });
@@ -55,28 +66,13 @@ site.task('pages', function(){
     }))
     .pipe(site.dest(__dirname+'/dist'));
 });
-site.task('posts', function(){
-  return site.toStream('posts')
-    .pipe(site.renderFile())
-    .pipe(rename({
-      extname: '.html'
-    }))
-    .pipe(site.dest(__dirname+'/dist'));
-});
-site.task('watch:pages', function(){
-  site.watch([__dirname+'/src/markup/**/*.hbs'], ['pages']);
-});
-site.task('watch:posts', function(){
-  site.watch([__dirname+'/src/posts/**/*.md'], ['posts']);
-});
 
 /**
  * Default
  * Runs watch, which in turn runs the builds
  * for pages and posts.
  */
-site.task('default', ['build', site.parallel(['watch:pages', 'watch:posts'])]);
-site.task('build', ['load', 'pages', 'posts']);
+site.task('default', ['build']);
+site.task('build', ['load', 'pages']);
 
-/**/
 module.exports = site;

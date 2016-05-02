@@ -15,7 +15,46 @@ var config = {
     description: 'Designer, developer.',
     keywords: 'developer',
     og_img: '/'
-  }
+  },
+  structure: {
+    types: {
+      post: {
+        template: 'post',
+        hasPage: true
+      },
+      project: {
+        template: 'post'
+      }
+    },
+    pages: {
+      index: {
+        template: 'home'
+      },
+      writing: {
+        template: 'posts'
+      }
+    }
+  },
+  assemble: {
+    layouts: {
+      base: './src/markup/layouts/',
+      patterns: '*.hbs',
+      options: {},
+    },
+    pages: {
+      base: './src/markup/templates/',
+      patterns: '*.hbs',
+      options: {},
+    },
+    partials: {
+      base: './src/markup/',
+      patterns: [
+        'components/*.hbs',
+        'modules/*.hbs'
+      ],
+      options: {},
+    }
+  } 
 }
 
 module.exports = config;
