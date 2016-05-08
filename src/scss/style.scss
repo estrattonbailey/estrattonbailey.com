@@ -1,16 +1,16 @@
 // Base Styles
-@import "base/display";
+@import "base/normalize";
 @import "base/breakpoints";
+@import "base/display";
 @import "base/widths";
-@import "base/height";
 @import "base/containers";
 @import "base/clears";
 @import "base/utilities";
-@import "base/normalize";
 @import "base/colors";
 @import "base/align";
 @import "base/floats";
 @import "base/spacing";
+@import "base/z-index";
 
 // Elements
 @import "elements/_init";
@@ -18,5 +18,7 @@
 // Components
 @import "components/_init";
 
-// Partials
-@import "partials/_page";
+// Modules
+// @import "modules/hero";
+
+@import 'vendor/solarized-light';

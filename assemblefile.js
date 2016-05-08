@@ -3,7 +3,7 @@ var site,
     assemble = require('assemble'),
     rename = require('gulp-rename'),
     watch = require('base-watch'),
-    rimraf = require('rimraf'),
+    del = require('delete'),
     helpers = require(__dirname+'/lib/helpers.js');
 
 /**
@@ -21,6 +21,14 @@ site.create('pages', {isPartial: true});
 /**
  * Helpers
  */
+function clean(){
+  del.sync(['./dist/**/**/*.html'], function(err) {
+    if (err) throw err;
+    console.log('done!');
+  });
+
+  console.log('Clean dist/ directory complete.')
+};
 Object.keys(helpers).forEach(function(name, i){
   site.helper(name, helpers[name]);
 });
@@ -55,6 +63,8 @@ site.task('load', function(cb){
 
   site.layouts(layoutsGlob);
   site.partials(partialsGlob);
+
+  clean();
 
   cb()
 });

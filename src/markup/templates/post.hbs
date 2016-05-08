@@ -1,24 +1,17 @@
 ---
 layout: default.hbs
 ---
-<section class="page__section">
-  <div class="breadcrumbs">
-    <h4 class="c-g2">
-      <a href="/" class="c-b font-w-5 underline inline-relative">Home</a>
-      <span class="c-g3 font-w-9 mh-6">/</span>
-      <a href="/writing" class="c-b font-w-5 underline inline-relative">Writing</a>
-      <span class="c-g3 font-w-9 mh-6">/</span>
-      <span href="/" class="font-w-5">{{title}}</span>
-    </h4>
+<section class="container--s mha">
+  <div class="content pt6 pb2 ph2">
+    <header class="highlighter pb2 h5 uppercase">
+      <a href="../../">home</a>
+      <a href="../">writing</a> 
+      <span class="cg">{{fields.title}}</span></header>
+    <article class="text-content pv4">
+      <h1 class="type--reset inline-block relative bold">{{fields.title}}</h1>
+      <div class="p">
+        {{markdown fields.content}}
+      </div>
+    </article>
   </div>
-</section>
-
-<section class="page__section">
-  <article class="article block-relative f-limit-60 f4 font-w-5">
-    <header class="article__header mb-30">
-      <h4 class="article__date mb-20">{{date}}</h4>
-      <h1 class="article__title font-w-9">{{title}}</h1>
-    </header>
-    {{#markdown}}{{body}}{{/markdown}}
-  </article>
 </section>

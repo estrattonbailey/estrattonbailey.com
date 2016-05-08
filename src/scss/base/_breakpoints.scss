@@ -1,13 +1,14 @@
 // BREAKPOINTS
 // These should be configured for the project.
-// The namespace `$_*` refers to the suffixes
-// used throughout the rest of the project.
-$_xs: 400;
-$_s: 600;
-$_m: 800;
-$_l: 1000;
-$_xl: 1200;
-$_xxl: 1400;
+// To use, reference via the break() function
+// below, i.e. break(xl)
+$breakpoints: (
+	xs: 399,
+	s: 600,
+	m: 850,
+	l: 1050,
+	xl: 1200
+) !default;
 
 // This function converts values to ems,
 // regardless of units.
@@ -32,12 +33,22 @@ $_xxl: 1400;
 // max-width queries, and converts the pixel
 // value breakpoint variables at the top of this
 // doc to ems for the rendered @media blocks.
+// If passed a pixel value, it simply converts
+// it to ems for use.
 @function break($breakpoint, $min-width: true) {
-	@if ($min-width == false) {
-		@return em($breakpoint - 1); // subtract on integer for max-width based queries
+	@if map-has-key($breakpoints, $breakpoint) {
+    @if ($min-width == false) {
+      @return em(map-get($breakpoints, $breakpoint) - 1);
+    } @else {
+      @return em(map-get($breakpoints, $breakpoint));
+    }
 	} @else {
-		@return em($breakpoint);
-	}
-	@warn "#{$breakpoint} in function break(#{$breakpoint}) does not exist.";
+    @if ($min-width == false) {
+      @return em($breakpoint - 1)
+    } @else {
+      @return em($breakpoint)
+    }
+  }
+	@warn "Bad value (#{$breakpoint}) in function break(#{$breakpoint}).";
 	@return 'Check your break() declaration.';
 }

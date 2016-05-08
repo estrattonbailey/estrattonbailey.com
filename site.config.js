@@ -3,8 +3,8 @@ try {
 } catch(e){}
 
 var domain = process.env.PRODUCTION === 'true' 
-      ? 'http://localhost:5000'
-      : 'https://estrattonbailey.herokuapp.com';
+      ? 'https://estrattonbailey.herokuapp.com'
+      : 'http://localhost:5000';
 
 var config = {
   meta: {

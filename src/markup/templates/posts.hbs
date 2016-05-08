@@ -1,20 +1,14 @@
 ---
 layout: default.hbs
 ---
-<section class="page__section">
-  <div class="breadcrumbs">
-    <h4 class="c-g2">
-      <a href="/" class="c-b font-w-5 underline inline-relative">Home</a>
-      <span class="c-g3 font-w-9 mh-6">/</span>
-      <span href="./writing" class="font-w-5">Writing</span>
-    </h4>
+<section class="container--s mha">
+  <div class="content pt6 pb2 ph2">
+    <header class="highlighter pb2 h3"><a href="../">home,</a> <span class="cg2">writing</span></header>
+    {{#each post}}
+      <a href="{{permalink}}" class="post block relative pv4">
+        <h2 class="type--reset inline-block relative">{{fields.title}}</h2>
+        <p>{{fields.excerpt}}</p>
+      </a>
+    {{/each}}
   </div>
 </section>
-
-<section class="page__section">
-  <!-- {{#each posts}} -->
-  <!--   {{> post}} -->
-  <!-- {{/each}} -->
-</section>
-
-<footer class="block-relative h14 bg-c-theme"></footer>

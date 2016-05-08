@@ -1,46 +1,23 @@
 ---
 layout: default.hbs
 ---
-<section class="page__section relative h45 w1 bg-c-w">
-  <header class="relative w1">
-    <h1 class="f4 mb-15">{{site.meta.author}}</h1>
-    <hr class="page__divider w1 bg-c-g1">
-  </header>
-  <div class="table w1 h1p">
-    <div class="table__cell w1 align-m">
-      <h2 class="f3 c-theme font-w-4 f-limit-40">Eric Bailey is a front-end developer and designer living and working in New York City. He’s from Iowa and will tell you so if you meet him.</h2>
+<section class="container--s mha">
+  <div class="content pt6 pb2 ph2">
+    <main class="lede">
+      <h2 class="highlighter">My name is Eric Bailey. I am a developer and designer based in Brooklyn, NY. I make things for the web. Read my <a href="./writing">writing</a>, check out my <a href="#0">Dribbble</a> & <a href="#0">Github</a>, or reach me on <a href="#0">Twitter</a>.</h3>
+    </main>
+  </div>
+
+  <div class="projects pv2 ph2">
+    <div class="clear mhn2">
+      {{#each project}}
+        <div class="col-12 col-6_m float-l ph2">
+          <a href="{{fields.url}}" class="project block relative pb2">
+            <h4 class="type--reset underline--large inline-block relative">{{fields.title}}</h4>
+            <p>{{fields.caption}}</p>
+          </a>
+        </div>
+      {{/each}}
     </div>
   </div>
-  <div class="hero-social absolute c-g3 f4">
-    <a class="inline-relative mr-10" href="#0">Twitter</a>
-    <a class="inline-relative mr-10" href="#0">Github</a>
-    <a class="inline-relative mr-10" href="#0">Dribble</a>
-  </div>
 </section>
-
-<section class="page__section bg-c-g1 u-clear">
-  {{#each projects}}
-    <a href="{{link}}" class="project block float-l w12_m w13_xl pv-5 mv-24">
-      <h3 class="font-w-5 inline-relative mb-6 underline">{{title}}</h3>
-      <p>{{caption}}</p>
-    </a>
-  {{/each}}
-</section>
-
-<section class="posts page__section relative bg-c-w">
-  <div class="container u-clear">
-    <div class="relative w13_l float-l mb-30">
-      <a href="./writing">
-        <h2 class="f4 font-w-9 underline--thick inline-relative">WRITING</h2>
-      </a>
-    </div>
-    <div class="relative w23_l float-l">
-    </div>
-  </div>
-  <footer class="posts__footer relative u-clear">
-    <hr class="page__divider w1 bg-c-g1">
-    <a href="./writing" role="button" class="button--ghost f5 float-r font-w-9 mt-10">READ MORE ></a>
-  </footer>
-</section>
-
-<footer class="block-relative h14 bg-c-theme"></footer>
