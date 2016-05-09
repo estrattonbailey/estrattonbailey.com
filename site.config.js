@@ -1,5 +1,5 @@
 try {
-  require('dotenv').config();
+  require('dotenv').config({silent: true});
 } catch(e){}
 
 var domain = process.env.NODE_ENV === 'production' 
