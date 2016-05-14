@@ -21,7 +21,13 @@ app.listen(app.get('port'), function() {
 });
 
 app.post('/contentful', function(req, res, next) {
-  console.log(req.headers['x-contentful-topic'].split('.')[2])
-  console.log(req.body)
+  var action = req.headers['x-contentful-topic'].split('.')[2],
+      type = req,
+      data = req;
+
+  console.log(action) // "change" "publish" etc
+  console.log(type)
+  console.log(data)
+
   res.sendStatus(200);
 });
