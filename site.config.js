@@ -2,8 +2,8 @@ var config = {
   meta: {
     version: '0.0.1',
     title: 'Eric Bailey',
-    // url: 'https://estrattonbailey.herokuapp.com',
-    url: 'http://localhost:5000',
+    url: 'https://estrattonbailey.herokuapp.com',
+    // url: 'http://localhost:5000',
     author: '@estrattonbailey',
     description: 'Designer, developer.',
     keywords: 'developer',
@@ -13,7 +13,8 @@ var config = {
     types: {
       post: {
         template: 'post',
-        hasPage: true
+        hasPage: true,
+        rootPath: 'writing'
       },
       project: {
         template: 'post'

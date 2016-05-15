@@ -1,6 +1,7 @@
 var app,
     path = require('path'),
     express = require('express'),
+    body = require('body-parser'),
     build = require('./lib/build.js');
 
 /**
@@ -9,6 +10,8 @@ var app,
 app = express();
 app.use(express.static(__dirname + '/dist'));
 app.set('port', process.env.PORT || 5000);
+
+var bodyParser = body.json({ type: 'application/*+json' });
 
 /**
  * Default Route
@@ -20,14 +23,16 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.post('/contentful', function(req, res, next) {
+app.post('/contentful', bodyParser, function(req, res) {
+  if (!req.body) res.sendStatus(400);
+
   var action = req.headers['x-contentful-topic'].split('.')[2],
-      type = req,
-      data = req;
+      data = {
+        fields: req.body.fields,
+        type: req.body.sys.contentType.sys.id 
+      }
 
-  console.log(action) // "change" "publish" etc
-  console.log(type)
-  console.log(data)
+  build(action, data)
 
-  res.sendStatus(200);
+  res.status(200).json(req.body);
 });
