@@ -2,7 +2,8 @@ var app,
     path = require('path'),
     express = require('express'),
     body = require('body-parser'),
-    build = require('./lib/build.js');
+    build = require('./lib/build.js'),
+    store = require('./lib/storage.js');
 
 /**
  * Init Express server
@@ -28,9 +29,11 @@ app.post('/contentful', bodyParser, function(req, res) {
 
   var action = req.headers['x-contentful-topic'].split('.')[2],
       data = {
-        fields: req.body.fields,
-        type: req.body.sys.contentType.sys.id 
+        type: req.body.sys.contentType.sys.id,
+        id: req.body.sys.id
       }
+
+  store.partial(req.body)
 
   build(action, data)
 
