@@ -52,6 +52,18 @@
   },
   "post": [
     {
+      "id": "2xJIqnH6tG2OuKyWSQgEoE",
+      "type": "post",
+      "createdAt": "2016-05-15T14:11:22.322Z",
+      "title": "New Fucking Title.",
+      "content": "Content.",
+      "excerpt": "Thank fucking god this works.",
+      "handle": "new-fucking-title",
+      "template": "post.hbs",
+      "path": "/writing/new-fucking-title/index.html",
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/new-fucking-title/index.html"
+    },
+    {
       "id": "3yY7OdUJQceWmgYk2mY2Eq",
       "type": "post",
       "createdAt": "2016-05-01T19:34:27.715Z",
@@ -62,18 +74,6 @@
       "template": "post.hbs",
       "path": "/writing/css-is-an-api/index.html",
       "permalink": "https://estrattonbailey.herokuapp.com/writing/css-is-an-api/index.html"
-    },
-    {
-      "id": "2xJIqnH6tG2OuKyWSQgEoE",
-      "type": "post",
-      "createdAt": "2016-05-15T14:11:22.322Z",
-      "title": "New Post",
-      "content": "Content.",
-      "excerpt": "Excerpt :)",
-      "handle": "new-post",
-      "template": "post.hbs",
-      "path": "/writing/new-post/index.html",
-      "permalink": "https://estrattonbailey.herokuapp.com/writing/new-post/index.html"
     }
   ],
   "project": [
