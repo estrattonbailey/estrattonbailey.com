@@ -29,8 +29,11 @@ app.post('/contentful', bodyParser, function(req, res) {
 
   var action = req.headers['x-contentful-topic'].split('.')[2];
 
-  store.partial(req.body, function(data){
-    build(action, data);
+  console.log('ROOT ACTION: ',action);
+
+  store.partial(req.body, action, function(data){
+    console.log('BUILD CALLBACK')
+    build(data);
   });
 
   res.status(200).json(req.body);

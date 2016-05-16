@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "npm run assets:build ; npm run data:fetch ; npm run site:build ; parallelshell 'npm run js:watch' 'npm run css:watch' 'npm run site:watch' 'node index.js'",
+    "start": "npm run assets:build ; npm run data:fetch && npm run site:build && parallelshell 'npm run js:watch' 'npm run css:watch' 'npm run site:watch' 'node index.js'",
     "site:watch": "onchange './lib/**/*.js' './site.config.js' './src/markup/**/*.hbs' -- npm run site:build",
     "site:build": "node lib/build.js --run",
     "data:fetch": "node lib/contentful.js --run",
