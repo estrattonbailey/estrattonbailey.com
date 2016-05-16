@@ -27,15 +27,11 @@ app.listen(app.get('port'), function() {
 app.post('/contentful', bodyParser, function(req, res) {
   if (!req.body) res.sendStatus(400);
 
-  var action = req.headers['x-contentful-topic'].split('.')[2],
-      data = {
-        type: req.body.sys.contentType.sys.id,
-        id: req.body.sys.id
-      }
+  var action = req.headers['x-contentful-topic'].split('.')[2];
 
-  store.partial(req.body)
-
-  build(action, data)
+  store.partial(req.body, function(data){
+    build(action, data);
+  });
 
   res.status(200).json(req.body);
 });
