@@ -52,18 +52,6 @@
   },
   "post": [
     {
-      "id": "3NRPpFveu4OEESCaswQMW6",
-      "type": "post",
-      "createdAt": "2016-05-17T12:34:42.925Z",
-      "title": "New Post Test",
-      "body": "Post content @ 8:34am",
-      "excerpt": "Excert @ 8:34am",
-      "handle": "new-post-test",
-      "template": "post.hbs",
-      "path": "/writing/new-post-test/index.html",
-      "permalink": "https://estrattonbailey.herokuapp.com/writing/new-post-test/index.html"
-    },
-    {
       "id": "1oZoifJ4ZWI6KmAyCaYKgU",
       "type": "post",
       "createdAt": "2016-03-05T20:53:36.153Z",
@@ -74,6 +62,17 @@
       "template": "post.hbs",
       "path": "/writing/show-your-work/index.html",
       "permalink": "https://estrattonbailey.herokuapp.com/writing/show-your-work/index.html"
+    },
+    {
+      "id": "47kx4BiO0wmMmysAMOO4q0",
+      "type": "post",
+      "createdAt": "2016-05-17T13:38:28.735Z",
+      "title": "New Post",
+      "excerpt": "Excerpt",
+      "handle": "new-post",
+      "template": "post.hbs",
+      "path": "/writing/new-post/index.html",
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/new-post/index.html"
     },
     {
       "id": "2nqXv4PXDKEeCe08CoGUmw",
