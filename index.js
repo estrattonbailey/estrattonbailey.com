@@ -30,11 +30,14 @@ app.post('/contentful', bodyParser, function(req, res) {
   var action = req.headers['x-contentful-topic'].split('.')[2];
 
   console.log('ROOT ACTION: ',action);
+  console.log('DATA: ',req.body);
 
-  store.partial(req.body, action, function(data){
-    console.log('BUILD CALLBACK')
-    build(data);
-  });
+  if (req.body.fields || action === 'delete' || action === 'unpublish'){
+    store.partial(req.body, action, function(data){
+      console.log('BUILD CALLBACK')
+      build(data);
+    });
+  }
 
   res.status(200).json(req.body);
 });
