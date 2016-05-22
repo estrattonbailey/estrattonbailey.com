@@ -52,40 +52,6 @@
   },
   "post": [
     {
-      "id": "1oZoifJ4ZWI6KmAyCaYKgU",
-      "type": "post",
-      "createdAt": "2016-03-05T20:53:36.153Z",
-      "title": "Show Your Work",
-      "body": "Lately I feel like I’ve been finding a lot of process articles floating around the internet and Twitter. These are articles that document the authors thought process, often times asking questions that they don’t know the answer to. This is awesome! For a couple main reasons: \n\nOne, for young devs like me, it’s reassuring knowing that even accomplished devs struggle with concepts and learning what works for them.\n\nTwo, it means that instead of calling others out and staking opinions on the best framework (which seems to happen a lot lately), these authors are letting people in a something we all share: we’re learning as we go.\n\nI’m thinking now about that quote attributed to Jeff Bezos:\n> People who are right a lot of the time are people who often change their minds.\n\nWhich brings me to my point.\n\n### The Point\n\nI just read [_Why Curry Helps_](https://hughfdjackson.com/javascript/why-curry-helps/) by Hugh Jackson. In the article he explains how currying, a feature of purely functional languages like Haskell, can be used in Javascript to great effect. The benefits as outlined by his examples are pretty clear: simple, reusable code.\n\nIn the comments, a guy named Josh Habdas made a good point though:\n> Taking ES6 arrow functions into consideration the boilerplate shown to access the data in the examples would be simplified markedly.\n\nJackson then responded with a link to [another of his articles](https://hughfdjackson.com/javascript/does-curry-help/), which addressed Habdas’s point and was aptly titled, _Does Curry Help?_ So, I read that article too.\n\nThe second article essentially said this: I was wrong two years ago about currying, and here are the takeaways I have from this learning process.\n\nI think some of the best of those takeaways are as follows:\n\n1.  “Simple”, he proposes, means that concerns aren’t tangled up together. “Easy”, that something close to your current understanding.\n\n2.  Perfectly simple code - code that doesn’t needlessly intertwine any concerns - gains your team little if it’s outstandingly difficult to work with.\n\n3.  While I still believe that the benefits I focussed on in [Why Curry Helps](https://hughfdjackson.com/javascript/why-curry-helps) exist, the article doesn’t pay enough attention to the issues with using the technique in practice.\n\n4.  I’ve seen the value of meeting people much closer to where they are.\n\nThese are powerful points that I’m going to try to keep in mind as I work with and grow teams.\n\nBut I think the greater lesson – and hopefully a trend – is that letting people into your process helps to bring everyone to the same level. Lack of experience shouldn't be a barrier to sharing honest thoughts. You don't have to know everything to contibute ideas, pose questions, and engage in constructive conversation.",
-      "excerpt": "For young devs like me, it’s reassuring knowing that even accomplished devs struggle with concepts and learning what works for them.",
-      "handle": "show-your-work",
-      "template": "post.hbs",
-      "path": "/writing/show-your-work/index.html",
-      "permalink": "https://estrattonbailey.herokuapp.com/writing/show-your-work/index.html"
-    },
-    {
-      "id": "3regyG1rgkGM2Oyo4sKyWg",
-      "type": "post",
-      "createdAt": "2016-05-22T19:25:48.873Z",
-      "title": "Another new post!",
-      "excerpt": "Excerpt",
-      "handle": "another-new-post!",
-      "template": "post.hbs",
-      "path": "/writing/another-new-post!/index.html",
-      "permalink": "https://estrattonbailey.herokuapp.com/writing/another-new-post!/index.html"
-    },
-    {
-      "id": "7umjjuMy2IKGKQ04WqEEUc",
-      "type": "post",
-      "createdAt": "2016-05-22T19:35:37.859Z",
-      "title": "Yeah Yeah Yeah",
-      "excerpt": "Yeah",
-      "handle": "yeah-yeah-yeah",
-      "template": "post.hbs",
-      "path": "/writing/yeah-yeah-yeah/index.html",
-      "permalink": "https://estrattonbailey.herokuapp.com/writing/yeah-yeah-yeah/index.html"
-    },
-    {
       "id": "2nqXv4PXDKEeCe08CoGUmw",
       "type": "post",
       "createdAt": "2016-05-17T12:25:55.088Z",
@@ -98,15 +64,16 @@
       "permalink": "https://estrattonbailey.herokuapp.com/writing/css-is-an-api/index.html"
     },
     {
-      "id": "31wfcuUo7KU4CaASyKs6GQ",
+      "id": "1oZoifJ4ZWI6KmAyCaYKgU",
       "type": "post",
-      "createdAt": "2016-05-22T19:12:30.832Z",
-      "title": "New Post!!!",
-      "excerpt": "Excerpt",
-      "handle": "new-post!!!",
+      "createdAt": "2016-03-05T20:53:36.153Z",
+      "title": "Show Your Work",
+      "body": "Lately I feel like I’ve been finding a lot of process articles floating around the internet and Twitter. These are articles that document the authors thought process, often times asking questions that they don’t know the answer to. This is awesome! For a couple main reasons: \n\nOne, for young devs like me, it’s reassuring knowing that even accomplished devs struggle with concepts and learning what works for them.\n\nTwo, it means that instead of calling others out and staking opinions on the best framework (which seems to happen a lot lately), these authors are letting people in a something we all share: we’re learning as we go.\n\nI’m thinking now about that quote attributed to Jeff Bezos:\n> People who are right a lot of the time are people who often change their minds.\n\nWhich brings me to my point.\n\n### The Point\n\nI just read [_Why Curry Helps_](https://hughfdjackson.com/javascript/why-curry-helps/) by Hugh Jackson. In the article he explains how currying, a feature of purely functional languages like Haskell, can be used in Javascript to great effect. The benefits as outlined by his examples are pretty clear: simple, reusable code.\n\nIn the comments, a guy named Josh Habdas made a good point though:\n> Taking ES6 arrow functions into consideration the boilerplate shown to access the data in the examples would be simplified markedly.\n\nJackson then responded with a link to [another of his articles](https://hughfdjackson.com/javascript/does-curry-help/), which addressed Habdas’s point and was aptly titled, _Does Curry Help?_ So, I read that article too.\n\nThe second article essentially said this: I was wrong two years ago about currying, and here are the takeaways I have from this learning process.\n\nI think some of the best of those takeaways are as follows:\n\n1.  “Simple”, he proposes, means that concerns aren’t tangled up together. “Easy”, that something close to your current understanding.\n\n2.  Perfectly simple code - code that doesn’t needlessly intertwine any concerns - gains your team little if it’s outstandingly difficult to work with.\n\n3.  While I still believe that the benefits I focussed on in [Why Curry Helps](https://hughfdjackson.com/javascript/why-curry-helps) exist, the article doesn’t pay enough attention to the issues with using the technique in practice.\n\n4.  I’ve seen the value of meeting people much closer to where they are.\n\nThese are powerful points that I’m going to try to keep in mind as I work with and grow teams.\n\nBut I think the greater lesson – and hopefully a trend – is that letting people into your process helps to bring everyone to the same level. Lack of experience shouldn't be a barrier to sharing honest thoughts. You don't have to know everything to contibute ideas, pose questions, and engage in constructive conversation.",
+      "excerpt": "For young devs like me, it’s reassuring knowing that even accomplished devs struggle with concepts and learning what works for them.",
+      "handle": "show-your-work",
       "template": "post.hbs",
-      "path": "/writing/new-post!!!/index.html",
-      "permalink": "https://estrattonbailey.herokuapp.com/writing/new-post!!!/index.html"
+      "path": "/writing/show-your-work/index.html",
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/show-your-work/index.html"
     }
   ],
   "project": [
