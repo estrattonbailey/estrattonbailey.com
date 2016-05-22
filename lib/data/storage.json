@@ -3,7 +3,7 @@
     "meta": {
       "version": "0.0.1",
       "title": "Eric Bailey",
-      "url": "http://localhost:5000",
+      "url": "https://estrattonbailey.herokuapp.com",
       "author": "@estrattonbailey",
       "description": "Designer, developer.",
       "keywords": "developer",
@@ -61,18 +61,29 @@
       "handle": "show-your-work",
       "template": "post.hbs",
       "path": "/writing/show-your-work/index.html",
-      "permalink": "http://localhost:5000/writing/show-your-work/index.html"
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/show-your-work/index.html"
     },
     {
-      "id": "1WY2Poqpo4gAUia6Ie2Ago",
+      "id": "3regyG1rgkGM2Oyo4sKyWg",
       "type": "post",
-      "createdAt": "2016-05-19T13:37:12.397Z",
-      "title": "New Post",
+      "createdAt": "2016-05-22T19:25:48.873Z",
+      "title": "Another new post!",
       "excerpt": "Excerpt",
-      "handle": "new-post",
+      "handle": "another-new-post!",
       "template": "post.hbs",
-      "path": "/writing/new-post/index.html",
-      "permalink": "http://localhost:5000/writing/new-post/index.html"
+      "path": "/writing/another-new-post!/index.html",
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/another-new-post!/index.html"
+    },
+    {
+      "id": "7umjjuMy2IKGKQ04WqEEUc",
+      "type": "post",
+      "createdAt": "2016-05-22T19:35:37.859Z",
+      "title": "Yeah Yeah Yeah",
+      "excerpt": "Yeah",
+      "handle": "yeah-yeah-yeah",
+      "template": "post.hbs",
+      "path": "/writing/yeah-yeah-yeah/index.html",
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/yeah-yeah-yeah/index.html"
     },
     {
       "id": "2nqXv4PXDKEeCe08CoGUmw",
@@ -84,7 +95,18 @@
       "handle": "css-is-an-api",
       "template": "post.hbs",
       "path": "/writing/css-is-an-api/index.html",
-      "permalink": "http://localhost:5000/writing/css-is-an-api/index.html"
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/css-is-an-api/index.html"
+    },
+    {
+      "id": "31wfcuUo7KU4CaASyKs6GQ",
+      "type": "post",
+      "createdAt": "2016-05-22T19:12:30.832Z",
+      "title": "New Post!!!",
+      "excerpt": "Excerpt",
+      "handle": "new-post!!!",
+      "template": "post.hbs",
+      "path": "/writing/new-post!!!/index.html",
+      "permalink": "https://estrattonbailey.herokuapp.com/writing/new-post!!!/index.html"
     }
   ],
   "project": [
