@@ -22,3 +22,9 @@
 // @import "modules/hero";
 
 @import 'vendor/solarized-light';
+
+.lede p {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
