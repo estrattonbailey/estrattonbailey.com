@@ -3,7 +3,8 @@
     "meta": {
       "version": "0.0.1",
       "title": "Eric Bailey",
-      "url": "http://localhost:5000",
+      "production_url": "https://estrattonbailey.herokuapp.com",
+      "dev_url": "http://localhost:5000",
       "author": "@estrattonbailey",
       "description": "Designer, developer.",
       "keywords": "developer",
@@ -101,7 +102,7 @@
       "createdAt": "2016-05-24T01:43:45.643Z",
       "slug": "index",
       "title": "Home",
-      "content": "My name is Eric Bailey. I am a developer and designer based in Brooklyn, NY. I make things for the web. Read my [writing](/writing), check out my Dribbble & Github, or reach me on Twitter."
+      "content": "My name is Eric Bailey. I am a developer and designer based in Brooklyn, NY. I make things for the web. Read my [writing](/writing), check out my [Dribbble](https://dribbble.com/estrattonbailey) & [Github](https://github.com/estrattonbailey), or reach me on [Twitter](https://twitter.com/estrattonbailey)."
     }
   ]
 }

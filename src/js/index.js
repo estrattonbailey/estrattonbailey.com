@@ -1,3 +1,5 @@
-function test(){
-  console.log("Hello world!");
-}
+// import Ajax from 'lib/ajax'
+
+window.addEventListener('DOMContentLoaded', function(){
+  ajax()
+})

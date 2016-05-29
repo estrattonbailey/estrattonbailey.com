@@ -2,8 +2,8 @@ var config = {
   meta: {
     version: '0.0.1',
     title: 'Eric Bailey',
-    url: 'https://estrattonbailey.herokuapp.com',
-    // url: 'http://localhost:5000',
+    production_url: 'https://estrattonbailey.herokuapp.com',
+    dev_url: 'http://localhost:5000',
     author: '@estrattonbailey',
     description: 'Designer, developer.',
     keywords: 'developer',

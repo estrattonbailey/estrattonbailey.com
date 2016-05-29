@@ -23,6 +23,26 @@
 
 @import 'vendor/solarized-light';
 
+html, body {
+}
+
+pre {
+	background-color: $cg1;
+	margin: 2em 0;
+	overflow: auto;
+	overflow-y: hidden;
+	padding: 1em 2em;
+	code {
+		background-color: transparent;
+	}
+}
+code {
+	@extend .p !optional;
+  @extend .type-monospace !optional;
+	background-color: $cg1;
+	white-space: pre;
+}
+
 .lede p {
   font-size: inherit;
   line-height: inherit;
