@@ -2,16 +2,24 @@
   "name": "estrattonbailey",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "index.js",
+  "barrel": {
+    "types": [
+      "module",
+      "component"
+    ]
+  },
   "scripts": {
-    "start": "npm run assets:build ; npm run data:fetch && npm run site:build && parallelshell 'npm run js:watch' 'npm run css:watch' 'npm run site:watch' 'node index.js'",
+    "start": "npm run assets:build ; npm run data:fetch && npm run site:build && node index.js",
+    "dev": "npm run assets:build ; npm run data:fetch && npm run site:build && parallelshell 'npm run js:watch' 'npm run css:watch' 'npm run site:watch' 'node index.js'",
     "site:watch": "onchange './lib/**/*.js' './site.config.js' './src/markup/**/*.hbs' -- npm run site:build",
     "site:build": "node lib/build.js --run",
     "data:fetch": "node lib/contentful.js --run",
     "assets:watch": "parallelshell 'npm run js:watch' 'npm run css:watch'",
     "assets:build": "npm run js:build ; npm run css:build",
-    "js:watch": "onchange './src/js/**/*.js' -- npm run js:build",
-    "js:build": "webpack",
+    "js:watch": "npm run js:dev",
+    "js:build": "node browserify.js --build",
+    "js:dev": "node browserify.js --dev",
     "css:watch": "onchange './src/scss/**/*.scss' -- npm run css:build",
     "css:build": "npm run css:scss && npm run css:autoprefixer",
     "css:scss": "node-sass src/scss/style.scss dist/assets/css/style.css",
@@ -24,9 +32,9 @@
     "assemble-indexer": "^0.1.2",
     "autoprefixer": "^6.3.3",
     "babel-core": "^6.5.2",
-    "babel-loader": "^6.2.2",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
     "base-watch": "^0.1.2",
     "body-parser": "^1.15.1",
     "contentful": "^3.0.7",
@@ -37,7 +45,6 @@
     "gulp-rename": "^1.2.2",
     "helper-markdown": "^0.2.1",
     "highlight.js": "^9.3.0",
-    "nab-select": "0.0.6",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
     "parallelshell": "^2.0.0",
@@ -45,7 +52,12 @@
     "remarkable": "^1.6.2",
     "rimraf": "^2.5.2",
     "svbstrate": "^0.5.3",
-    "uglify-loader": "^1.3.0",
-    "webpack": "^1.12.13"
-  }
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "browserify-shim": "^3.8.12",
+    "exorcist": "^0.4.0",
+    "minifyify": "^7.3.3"
+  },
+  "devDependencies": {},
+  "browserify-shim": {}
 }
