@@ -1,5 +1,5 @@
-var config = require('../../package.json')
-var initScripts = require('./lib/initScripts.js')
+import config from '../../package.json'
+import initScripts from './lib/initScripts'
 
 document.addEventListener('DOMContentLoaded', function(){
   /**

@@ -6,7 +6,7 @@ window.app = {};
  * @param {object} el Context element
  * @param {string} type Classification of script
  */
-function prep(el, type){
+export default function(el, type){
   var raw, sequences
 
   window.app[type] = {}
@@ -83,7 +83,7 @@ function prep(el, type){
  * @param {object} args {context: fn(), snippets: [fns()], params: []}
  * @param {string} type Classification of script
  */
-function init(el, args, type){
+export function init(el, args, type){
   var context,
       returnData,  
       fns = [];
@@ -134,5 +134,3 @@ function init(el, args, type){
     $(el).data(type, instance)
   }
 }
-
-module.exports = prep;
