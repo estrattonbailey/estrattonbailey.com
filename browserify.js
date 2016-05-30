@@ -7,6 +7,7 @@ var browserify = require('browserify')
 var watchify = require('watchify')
 var exorcist = require('exorcist')
 var shim = require('browserify-shim')
+var mkdirp = require('mkdirp')
 
 /**
  * Parse flags, returns boolean
@@ -22,6 +23,14 @@ var BUILD = args.filter(function(arg){ return arg === '--build' }).length > 0 ? 
 MODE = DEV ? 'DEVELOPMENT' : 'PRODUCTION'
 
 console.log('Browserify MODE:',MODE,' BUILD:',BUILD);
+
+/**
+ * Make directories (if not already there)
+ */
+mkdirp.sync('dist/assets/js', function(err){
+  if (err) return console.log('ERROR: ',err)
+  console.log('Created /dist/ directory')
+})
 
 /**
  * INIT Browserify
@@ -64,8 +73,9 @@ b.plugin(bundle, {
  */
 if (MODE === 'PRODUCTION'){
   b.plugin('minifyify', {
-    map: './dist/assets/js/main.min.js.map'
-  });
+    map: 'main.min.js.map',
+    output: __dirname+'/dist/assets/js/main.min.js.map'
+  })
 }
 
 /**
@@ -107,15 +117,15 @@ function bundle() {
   var writeFile = fs.createWriteStream('./dist/assets/js/main.min.js')
 
   if (BUILD) writeFile.on('close', process.exit)
+  writeFile.on('error', console.log)
 
-  writeFile.on('error', console.log);
-
-  b.bundle()
-    .on('error', function(err){
-      console.log(err.message)
-      this.emit('end')
-    })
-    .pipe(exorcist('./dist/main.min.js.map'))
-    .pipe(writeFile)
+  writeFile.on('open', function(){
+    b.bundle()
+      .on('error', function(err){
+        console.log(err.message)
+        this.emit('end')
+      })
+      .pipe(exorcist('./dist/assets/js/main.min.js.map'))
+      .pipe(writeFile)
+  })
 }
-
