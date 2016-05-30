@@ -1,5 +1,6 @@
 import config from '../../package.json'
 import initScripts from './lib/initScripts'
+import router from './lib/router' 
 
 document.addEventListener('DOMContentLoaded', function(){
   /**
@@ -13,4 +14,6 @@ document.addEventListener('DOMContentLoaded', function(){
       initScripts(nodes[i], type)
     }
   });
+
+  router()
 });
