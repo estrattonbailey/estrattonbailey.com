@@ -61,8 +61,8 @@
       "excerpt": "Thinking about CSS as a way to interface with style properties.",
       "handle": "css-is-an-api",
       "template": "post.hbs",
-      "path": "/writing/css-is-an-api/index.html",
-      "permalink": "http://localhost:5000/writing/css-is-an-api/index.html"
+      "path": "/writing/css-is-an-api",
+      "permalink": "http://localhost:5000/writing/css-is-an-api"
     },
     {
       "id": "1oZoifJ4ZWI6KmAyCaYKgU",
@@ -73,8 +73,8 @@
       "excerpt": "For young devs like me, it’s reassuring knowing that even accomplished devs struggle with concepts and learning what works for them.",
       "handle": "show-your-work",
       "template": "post.hbs",
-      "path": "/writing/show-your-work/index.html",
-      "permalink": "http://localhost:5000/writing/show-your-work/index.html"
+      "path": "/writing/show-your-work",
+      "permalink": "http://localhost:5000/writing/show-your-work"
     }
   ],
   "project": [

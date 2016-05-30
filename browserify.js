@@ -64,7 +64,7 @@ b.plugin(bundle, {
  */
 if (MODE === 'PRODUCTION'){
   b.plugin('minifyify', {
-    map: './dist/main.min.js.map'
+    map: './dist/assets/js/main.min.js.map'
   });
 }
 

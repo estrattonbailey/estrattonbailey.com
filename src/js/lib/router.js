@@ -1,12 +1,15 @@
 import ajax from './ajax'
 import Navigo from 'navigo'
+import closest from 'closest'
 
-const basepath = window.location.origin
-const router = new Navigo()
+const base = window.location.origin
+const baseRegEx = new RegExp(base)
+
+const router = new Navigo('localhost:5000')
 
 function getTargets(){
   return Array.from(document.querySelectorAll('a')).filter(function(a){
-    let href, rel, target, basepathRegEx = new RegExp(basepath)
+    let href, rel, target
 
     href = a.getAttribute('href') || ''
     rel = a.getAttribute('rel') || false
@@ -14,28 +17,42 @@ function getTargets(){
 
     if (rel || target) return
 
-    if (href.match(/^[\/|a-z.*$][^http\:\/\/][^w{3}]/) || href.match(basepathRegEx)) return a
+    if (href.match(/^[\/|a-z.*$][^http\:\/\/][^w{3}]/) || href.match(baseRegEx)) return a
   })
 }
 
-const targets = getTargets()
+function scrubPath(url){
+  let path = url.replace(baseRegEx, '')
+  return path.match(/^\//) ? path : '/'+path // add /
+}
 
-export default function(){
+function bindLinks(){
+  let targets = getTargets()
+
   for (var i = 0; i < targets.length; i++){
     targets[i].addEventListener('click', function(e){
       e.preventDefault();
 
-      let prevURL = window.location.href
+      let prevURL = window.location.pathname
 
-      var path = e.target.getAttribute('href')
-      ajax('GET', path, function(res){
-        console.log(prevURL)
-        router.navigate(path)    
+      let path = scrubPath(closest(e.target, 'a', true).getAttribute('href') || '')
+
+      console.log(path)
+
+      ajax('GET', base+path, function(res){
+        try {
+          router.navigate(base+path)    
+        } catch(e){
+          console.log(e)
+        }
+        bindLinks()
       })
     })
   }
+}
 
-  console.log(targets)
+export default function(){
+  bindLinks()
 
   window.onpopstate = function(e){
     ajax('GET', e.target.location.href); // get page fragment, do not push state
